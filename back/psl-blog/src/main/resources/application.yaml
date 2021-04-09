@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Blog Pcologa Lara Santiago - Serviço de Backend
+    description: Serviço atomico responsável por gerenciar site
+  main:
+    banner-mode: "off"
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mariadb://172.17.0.2:3306/pls_blog
+    driverClassName: org.mariadb.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format_sql: true
+    properties:
+      hibernate: org.hibernate.dialect.MariaDBDialect
