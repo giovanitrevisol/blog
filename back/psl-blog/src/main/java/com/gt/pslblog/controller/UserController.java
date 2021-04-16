@@ -38,5 +38,4 @@ public class UserController {
         UserByIdResponse user =  consultUserService.userByIdResponse(id);
         return  ResponseEntity.ok().body(user);
     }
-
 }
