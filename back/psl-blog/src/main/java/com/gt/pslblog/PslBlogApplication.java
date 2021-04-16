@@ -8,7 +8,7 @@ public class PslBlogApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PslBlogApplication.class, args);
-		System.out.println("Iniciando o blog da Larinha pretinha da minha vida!!!!!!");
+		System.out.println("Iniciando o blog Lara!");
 	}
 
 }

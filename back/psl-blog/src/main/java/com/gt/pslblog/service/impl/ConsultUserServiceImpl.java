@@ -34,7 +34,7 @@ public class ConsultUserServiceImpl implements ConsultUserService {
                     .user(obj.get())
                     .build();
         } catch (Exception e) {
-            throw new ObjectNotFoundException("Falha ao buscar Usuário com ID: " + id);
+            throw new ObjectNotFoundException("Falha ao buscar Usuário com ID: " + id, e.getCause());
         }
     }
 }
