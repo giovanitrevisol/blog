@@ -25,7 +25,17 @@ public class dummyData {
                 .password("123")
                 .build();
 
+        User user2 = User.builder()
+                .id(2)
+                .firtName("Lara")
+                .lastName("Santiago")
+                .email("laratalita.santiago.com.br")
+                .birth(LocalDateTime.now())
+                .password("123")
+                .build();
+
         userRepository.save(user1);
+        userRepository.save(user2);
     }
 
 }

@@ -1,11 +1,11 @@
 package com.gt.pslblog.service;
 
 import com.gt.pslblog.response.AllUserResponse;
-import com.gt.pslblog.response.UserByIdResponse;
+import com.gt.pslblog.response.UserResponse;
 
 public interface ConsultUserService {
 
     public AllUserResponse allUserResponse();
 
-    public UserByIdResponse userByIdResponse(long id);
+    public UserResponse userByIdResponse(long id);
 }

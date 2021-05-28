@@ -10,5 +10,4 @@ public class PslBlogApplication {
 		SpringApplication.run(PslBlogApplication.class, args);
 		System.out.println("Iniciando o blog Lara!");
 	}
-
 }

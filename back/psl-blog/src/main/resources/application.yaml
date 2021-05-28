@@ -1,12 +1,13 @@
 spring:
+  server.port=9000:
   application:
-    name: Blog Pcologa Lara Santiago - Serviço de Backend
+    name: Spring Boot - projeto Blog
     description: Serviço atomico responsável por gerenciar site
   main:
     banner-mode: "off"
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mariadb://172.17.0.2:3306/pls_blog
+    url: jdbc:mariadb://172.27.0.2:3306/pls_blog?autoReconnect=true
     driverClassName: org.mariadb.jdbc.Driver
     username: root
     password: 123456
