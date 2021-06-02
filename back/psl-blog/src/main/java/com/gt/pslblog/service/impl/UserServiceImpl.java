@@ -1,19 +1,20 @@
 package com.gt.pslblog.service.impl;
 
 import com.gt.pslblog.domain.User;
+import com.gt.pslblog.exception.BadRequestException;
 import com.gt.pslblog.repository.UserRepository;
 import com.gt.pslblog.response.AllUserResponse;
 import com.gt.pslblog.response.UserResponse;
-import com.gt.pslblog.service.ConsultUserService;
-import com.gt.pslblog.service.exception.ObjectNotFoundException;
+import com.gt.pslblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ConsultUserServiceImpl implements ConsultUserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -21,8 +22,15 @@ public class ConsultUserServiceImpl implements ConsultUserService {
     @Override
     public AllUserResponse allUserResponse() {
         List<User> users = userRepository.findAll();
+        if(users.isEmpty()){
+            throw new BadRequestException("Nunhum usuário encontrado!");
+        }
+        List<UserResponse> userResponses = new ArrayList<>();
+        for (User user: users) {
+            userResponses.add(user.toUserResponse());
+        }
         return AllUserResponse.builder()
-                .users(users)
+                .users(userResponses)
                 .build();
     }
 
@@ -39,7 +47,7 @@ public class ConsultUserServiceImpl implements ConsultUserService {
                     .lastName(user.getLastName())
                     .build();
         } catch (Exception e) {
-            throw new ObjectNotFoundException("Falha ao buscar Usuário com ID: " + id, e.getCause());
+            throw new BadRequestException("Usuário não encontrado. Id : " + id);
         }
     }
 }

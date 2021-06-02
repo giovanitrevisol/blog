@@ -3,7 +3,7 @@ package com.gt.pslblog.service;
 import com.gt.pslblog.response.AllUserResponse;
 import com.gt.pslblog.response.UserResponse;
 
-public interface ConsultUserService {
+public interface UserService {
 
     public AllUserResponse allUserResponse();
 

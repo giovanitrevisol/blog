@@ -1,28 +1,29 @@
 package com.gt.pslblog.controller;
 
 import com.gt.pslblog.response.AllPostResponse;
-import com.gt.pslblog.service.ConsultPostService;
+import com.gt.pslblog.response.PostResponse;
+import com.gt.pslblog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/post")
 public class PostController {
 
-
     @Autowired
-    private ConsultPostService consultPostService;
+    private PostService postService;
 
-
-    @GetMapping(value = "/test")
-    public String test(){
-        return "This is a test Post controller endpoint ";
+    @GetMapping(value = "/all")
+    public ResponseEntity<AllPostResponse> allPostResponse(){
+        return ResponseEntity.ok().body(postService.allPostResponse());
     }
 
-    @GetMapping(value = "all")
-    public AllPostResponse allPostResponse(){
-        return consultPostService.allPostResponse();
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<PostResponse> findById(@PathVariable Long id){
+        return ResponseEntity.ok().body(postService.postByid(id));
     }
-
-
 }

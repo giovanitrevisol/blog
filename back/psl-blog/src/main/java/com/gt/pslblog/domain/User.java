@@ -2,6 +2,7 @@ package com.gt.pslblog.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gt.pslblog.response.UserResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,8 +32,18 @@ public class User implements Serializable {
     private LocalDateTime birth;
     private String password;
 
-    //@JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "author")
     private List<Post> posts;
 
+
+    public UserResponse toUserResponse(){
+        return UserResponse.builder()
+                .id(this.id)
+                .firtName(this.firtName)
+                .lastName(this.lastName)
+                .email(this.email)
+                .birth(this.birth)
+                .build();
+    }
 }
