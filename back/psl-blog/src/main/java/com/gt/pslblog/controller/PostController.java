@@ -1,7 +1,7 @@
 package com.gt.pslblog.controller;
 
-import com.gt.pslblog.response.AllPostResponse;
-import com.gt.pslblog.response.PostResponse;
+import com.gt.pslblog.dto.response.AllPostResponse;
+import com.gt.pslblog.dto.response.PostResponse;
 import com.gt.pslblog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -3,6 +3,7 @@ package com.gt.pslblog.Dummy;
 import com.gt.pslblog.domain.Comment;
 import com.gt.pslblog.domain.Post;
 import com.gt.pslblog.domain.User;
+import com.gt.pslblog.enums.PostStatusEnum;
 import com.gt.pslblog.repository.CommentRepository;
 import com.gt.pslblog.repository.PostRepository;
 import com.gt.pslblog.repository.UserRepository;
@@ -40,7 +41,7 @@ public class dummyData {
     public void insertData() {
         User user1 = User.builder()
                 .id(1)
-                .firtName("Giovani")
+                .firtName("c")
                 .lastName("Trevisol")
                 .email("giovanitrevisol93@gmail.com")
                 .birth(LocalDateTime.now())
@@ -75,6 +76,7 @@ public class dummyData {
                 .subtitle("SubTitle")
                 .title("Title")
                 .contents(mensagem)
+                .postStatusEnum(PostStatusEnum.ACTIVE)
                 .build();
 
         Post post2 = Post.builder()
@@ -83,6 +85,7 @@ public class dummyData {
                 .subtitle("SubTitle 2")
                 .title("Title 2")
                 .contents("mensagem")
+                .postStatusEnum(PostStatusEnum.DELETED)
                 .build();
 
         postRepository.save(post1);

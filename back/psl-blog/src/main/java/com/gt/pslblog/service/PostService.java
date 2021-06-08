@@ -1,8 +1,7 @@
 package com.gt.pslblog.service;
 
-import com.gt.pslblog.response.AllPostResponse;
-import com.gt.pslblog.response.PostResponse;
-import org.springframework.stereotype.Service;
+import com.gt.pslblog.dto.response.AllPostResponse;
+import com.gt.pslblog.dto.response.PostResponse;
 
 
 public interface PostService {

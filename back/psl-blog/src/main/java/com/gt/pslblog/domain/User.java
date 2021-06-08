@@ -2,7 +2,7 @@ package com.gt.pslblog.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.gt.pslblog.response.UserResponse;
+import com.gt.pslblog.dto.response.UserResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

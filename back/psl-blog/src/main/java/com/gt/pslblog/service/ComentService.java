@@ -1,7 +1,7 @@
 package com.gt.pslblog.service;
 
-import com.gt.pslblog.response.AllCommentResponse;
-import com.gt.pslblog.response.CommentResponse;
+import com.gt.pslblog.dto.response.AllCommentResponse;
+import com.gt.pslblog.dto.response.CommentResponse;
 
 public interface ComentService {
 

@@ -1,8 +1,6 @@
-package com.gt.pslblog.response;
+package com.gt.pslblog.dto.response;
 
 import com.gt.pslblog.domain.Post;
-import com.gt.pslblog.domain.User;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 

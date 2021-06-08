@@ -1,5 +1,4 @@
-package com.gt.pslblog.response;
-import com.gt.pslblog.domain.Post;
+package com.gt.pslblog.dto.response;
 import lombok.Builder;
 import lombok.Getter;
 

@@ -1,5 +1,7 @@
+server:
+  error:
+    include-stacktrace: never
 spring:
-  server.port=9000:
   application:
     name: Spring Boot - projeto Blog
     description: Serviço atomico responsável por gerenciar site
