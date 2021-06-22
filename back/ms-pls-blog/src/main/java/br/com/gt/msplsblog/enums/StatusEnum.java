@@ -3,8 +3,7 @@ package br.com.gt.msplsblog.enums;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public enum PostStatusEnum {
-    NEW("New"),
+public enum StatusEnum {
     ACTIVE("Active"),
     DELETED("Deleted");
 

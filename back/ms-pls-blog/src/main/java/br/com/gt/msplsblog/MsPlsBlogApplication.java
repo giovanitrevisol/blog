@@ -12,4 +12,7 @@ public class MsPlsBlogApplication {
 		System.out.println("MS-PLS-BLOG");
 	}
 
+	//acesso swagger
+	//http://localhost:8080/swagger-ui.html
+
 }

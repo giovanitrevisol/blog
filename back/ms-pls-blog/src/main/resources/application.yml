@@ -1,4 +1,5 @@
 server:
+  port: 8080
   error:
     include-stacktrace: never
 spring:
@@ -20,3 +21,7 @@ spring:
     format_sql: true
     properties:
       hibernate: org.hibernate.dialect.MariaDBDialect
+
+jwt:
+  secret: SequenciaDeCaracteresParaAssinarToken
+  expiration: 300000 # 5min ---- 1min = 60000 milisegundos

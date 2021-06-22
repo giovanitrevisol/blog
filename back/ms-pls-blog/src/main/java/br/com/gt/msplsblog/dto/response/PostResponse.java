@@ -2,7 +2,7 @@ package br.com.gt.msplsblog.dto.response;
 
 import br.com.gt.msplsblog.domain.Comment;
 import br.com.gt.msplsblog.domain.User;
-import br.com.gt.msplsblog.enums.PostStatusEnum;
+import br.com.gt.msplsblog.enums.StatusEnum;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -27,5 +27,5 @@ public class PostResponse {
 
     private User author;
 
-    private PostStatusEnum postStatusEnum;
+    private StatusEnum statusEnum;
 }

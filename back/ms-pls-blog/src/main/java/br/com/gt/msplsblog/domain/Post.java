@@ -1,6 +1,6 @@
 package br.com.gt.msplsblog.domain;
 
-import br.com.gt.msplsblog.enums.PostStatusEnum;
+import br.com.gt.msplsblog.enums.StatusEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -45,5 +45,5 @@ public class Post implements Serializable {
     private User author;
 
     @Enumerated(EnumType.STRING)
-    private PostStatusEnum postStatusEnum;
+    private StatusEnum statusEnum;
 }

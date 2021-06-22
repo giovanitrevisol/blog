@@ -8,6 +8,7 @@ import br.com.gt.msplsblog.exception.BadRequestException;
 import br.com.gt.msplsblog.repository.UserRepository;
 import br.com.gt.msplsblog.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public AllUserResponse allUserResponse() {
@@ -56,6 +58,7 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserRequest userRequest) {
         validUserRequest(userRequest);
         existUser(userRequest);
+        userRequest.setPassword(passwordEncoder.encode(userRequest.getPassword()));
         try{
             userRepository.save(this.formUser(userRequest));
         } catch (Exception e){
@@ -72,6 +75,7 @@ public class UserServiceImpl implements UserService {
         user.setEmail(userRequest.getEmail());
         user.setPassword(userRequest.getPassword());
         user.setBirth(userRequest.getBirth());
+        user.setPerfilUserEnum(userRequest.getPerfilUser());
         userRepository.save(user);
         return user.toUserResponse();
     }

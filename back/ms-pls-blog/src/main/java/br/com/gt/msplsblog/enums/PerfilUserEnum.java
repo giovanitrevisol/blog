@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum PerfilUserEnum {
 
-    MASTER("Master"),
+    DEVELOPER("Developer"),
     OWNER("Owner"),
     READER("Reader");
 

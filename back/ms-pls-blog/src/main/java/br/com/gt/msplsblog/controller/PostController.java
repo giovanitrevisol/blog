@@ -4,8 +4,10 @@ import br.com.gt.msplsblog.dto.request.PostRequest;
 import br.com.gt.msplsblog.dto.response.AllPostResponse;
 import br.com.gt.msplsblog.dto.response.PostResponse;
 import br.com.gt.msplsblog.service.PostService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,6 +17,7 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @ApiOperation(value = "Busca todos os posts")
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping(value = "/all")
     public AllPostResponse allPostResponse(){
@@ -27,6 +30,7 @@ public class PostController {
         return postService.postByid(id);
     }
 
+    @PreAuthorize("hasAnyRole('Owner')")
     @PostMapping(value = "/add")
     @ResponseStatus(value = HttpStatus.CREATED)
     public void insertPost(@RequestBody PostRequest postRequest){

@@ -2,6 +2,7 @@ package br.com.gt.msplsblog.domain;
 
 import br.com.gt.msplsblog.dto.response.UserResponse;
 import br.com.gt.msplsblog.enums.PerfilUserEnum;
+import br.com.gt.msplsblog.enums.StatusEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -34,6 +35,8 @@ public class User implements Serializable {
     private String password;
     @Enumerated(EnumType.STRING)
     private PerfilUserEnum perfilUserEnum;
+    @Enumerated(EnumType.STRING)
+    private StatusEnum statusEnum;
 
     @JsonIgnore
     @OneToMany(mappedBy = "author")

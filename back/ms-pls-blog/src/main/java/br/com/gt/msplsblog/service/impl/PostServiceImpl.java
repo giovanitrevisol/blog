@@ -5,7 +5,7 @@ import br.com.gt.msplsblog.domain.User;
 import br.com.gt.msplsblog.dto.request.PostRequest;
 import br.com.gt.msplsblog.dto.response.AllPostResponse;
 import br.com.gt.msplsblog.dto.response.PostResponse;
-import br.com.gt.msplsblog.enums.PostStatusEnum;
+import br.com.gt.msplsblog.enums.StatusEnum;
 import br.com.gt.msplsblog.exception.BadRequestException;
 import br.com.gt.msplsblog.repository.PostRepository;
 import br.com.gt.msplsblog.repository.UserRepository;
@@ -52,7 +52,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public void savePost(PostRequest postRequest){
         validPostRequest(postRequest);
-        postRequest.setPostStatusEnum(PostStatusEnum.NEW);
+        postRequest.setStatusEnum(StatusEnum.ACTIVE);
         postRepository.save(fromPost(postRequest));
     }
 
@@ -85,7 +85,7 @@ public class PostServiceImpl implements PostService {
                 .date(postRequest.getDate())
                 .author(getUserById(postRequest.getAuthorId()))
                 .contents(postRequest.getContents())
-                .postStatusEnum(postRequest.getPostStatusEnum())
+                .statusEnum(postRequest.getStatusEnum())
                 .build();
     }
 

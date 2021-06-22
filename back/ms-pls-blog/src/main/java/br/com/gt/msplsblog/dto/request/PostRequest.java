@@ -1,5 +1,5 @@
 package br.com.gt.msplsblog.dto.request;
-import br.com.gt.msplsblog.enums.PostStatusEnum;
+import br.com.gt.msplsblog.enums.StatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,5 +18,5 @@ public class PostRequest {
     private String subtitle;
     private String contents;
     private Long authorId;
-    private PostStatusEnum postStatusEnum;
+    private StatusEnum statusEnum;
 }
