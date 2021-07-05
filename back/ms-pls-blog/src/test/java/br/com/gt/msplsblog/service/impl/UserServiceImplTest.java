@@ -14,6 +14,7 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Optional;
@@ -28,6 +29,9 @@ class UserServiceImplTest {
 
     @Mock
     private UserRepository userRepository;
+
+    @Mock
+    private BCryptPasswordEncoder passwordEncoder;
 
     private UserMock userMock;
 
@@ -62,8 +66,7 @@ class UserServiceImplTest {
 
     @Test
     void saveUser() {
-//        Mockito.when(userRepository.findById(ArgumentMatchers.any()))
-//                .thenReturn(java.util.Optional.ofNullable(userMock.user1));
+        Mockito.when(passwordEncoder.encode(ArgumentMatchers.any())).thenReturn("estaEASenhaCriptograda!!!AgoraCriptografou");
         userService.saveUser(userMock.userRequest1);
         Mockito.verify(userRepository).save(ArgumentMatchers.any());
     }
