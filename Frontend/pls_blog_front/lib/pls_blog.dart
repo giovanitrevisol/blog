@@ -16,9 +16,6 @@ class _PlsBlogState extends State<PlsBlog> {
       title: 'Psicóloga Lara Santiago - Blog',
       debugShowCheckedModeBanner: false,
       theme: WhiteTheme().white(),
-      // ThemeData(
-      //   primarySwatch: Colors.green,
-      // ),
       home: HomePageScreen(),
     );
   }

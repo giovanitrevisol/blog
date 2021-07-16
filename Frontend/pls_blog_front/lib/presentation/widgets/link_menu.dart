@@ -20,26 +20,29 @@ class _LinkMenuState extends State<LinkMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (e) => _mouseEnter(true),
-      onExit: (e) => _mouseEnter(false),
-      child: TweenAnimationBuilder(
-        duration: const Duration(milliseconds: 100),
-        tween: Tween<double>(begin: 1.0, end: scale),
-        builder: (BuildContext context, double value, _) {
-          return Transform.scale(
-            scale: value,
-            child: Row(
-              children: [
-                Text(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: MouseRegion(
+          onEnter: (e) => _mouseEnter(true),
+          onExit: (e) => _mouseEnter(false),
+          child: TweenAnimationBuilder(
+            duration: const Duration(milliseconds: 100),
+            tween: Tween<double>(begin: 1.0, end: scale),
+            builder: (BuildContext context, double value, _) {
+              return Transform.scale(
+                scale: value,
+                child: Text(
                   widget.text,
-                  style:
-                      TextStyle(color: isHover ? Colors.green : Colors.black),
+                  style: TextStyle(
+                    color: isHover ? Colors.green : Colors.black,
+                  ),
                 ),
-              ],
-            ),
-          );
-        },
+              );
+            },
+          ),
+        ),
       ),
     );
   }
