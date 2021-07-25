@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'color_main.dart';
 
@@ -16,48 +17,65 @@ class WhiteTheme {
         //   focusColor: Colors.white10,
         // ),
         textTheme: TextTheme(
-          headline1: TextStyle(
+          headline1: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.normal),
+          ),
+          headline2: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
+              fontSize: 36,
               color: Colors.white,
-              fontSize: 24,
+            ),
+          ),
+          headline3: GoogleFonts.josefinSans(
+            textStyle: TextStyle(fontSize: 32, height: 1.3),
+          ),
+          headline4: GoogleFonts.josefinSans(
+            textStyle: TextStyle(fontSize: 28, height: 1.3),
+          ),
+          headline5: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.normal),
+          ),
+          headline6: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
+              color: ColorMain.whiteColor,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.normal),
-          headline2: TextStyle(fontSize: 36, height: 1.3),
-          headline3: TextStyle(fontSize: 32, height: 1.3),
-          headline4: TextStyle(fontSize: 28, height: 1.3),
-          headline5: TextStyle(
+              fontStyle: FontStyle.normal,
+            ),
+          ),
+          bodyText2: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
+              fontSize: 18,
+              height: 1.3,
               color: Colors.black87,
+            ),
+          ),
+          bodyText1: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
+              fontSize: 17,
+              height: 1.3,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          button: GoogleFonts.josefinSans(
+            textStyle: TextStyle(
               fontSize: 20,
+              height: 1.3,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.normal),
-          headline6: TextStyle(
-            color: ColorMain.whiteColor,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.normal,
+            ),
           ),
-          bodyText2: TextStyle(
-            fontSize: 18,
-            height: 1.3,
-            color: Colors.black87,
-          ),
-          bodyText1: TextStyle(fontSize: 14, height: 1.3),
-          button: TextStyle(
-            fontSize: 16,
-            height: 1.3,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        bottomAppBarTheme:
-            BottomAppBarTheme(color: ColorMain.whiteColor, elevation: 3),
-        buttonTheme: ButtonThemeData(
-          buttonColor: Colors.green,
-          disabledColor: Colors.green.shade500,
-          textTheme: ButtonTextTheme.primary,
-          padding: EdgeInsets.all(10),
         ),
         toggleableActiveColor: ColorMain.colorMainApp,
         accentTextTheme: TextTheme(bodyText2: TextStyle(color: Colors.black)),
-        cardTheme: CardTheme(elevation: 3, color: Colors.white),
         accentColorBrightness: Brightness.light,
         accentColor: ColorMain.colorMainApp,
         backgroundColor: Colors.white,

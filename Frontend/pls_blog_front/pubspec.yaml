@@ -12,11 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  google_fonts: ^2.1.0
   mobx: ^2.0.0
   flutter_mobx: ^2.0.0
   get_it: ^6.1.1
   async: ^2.6.1
-  carousel_slider: ^4.0.0
+  animated_text_kit: ^4.2.1
 
 dev_dependencies:
   flutter_test:

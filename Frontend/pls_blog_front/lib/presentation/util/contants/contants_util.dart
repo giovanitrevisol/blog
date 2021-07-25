@@ -1,5 +1,5 @@
 class ConstantsUtil {
-  static const double screenPc = 1280;
-  static const double screenTablet = 960;
-  static const double screenSmartphone = 600;
+  static const double maxWidt = 1440.0;
+  static const defaultPadding = 20.0;
+  static const defaultDuration = Duration(seconds: 1);
 }
