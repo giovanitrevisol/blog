@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pls_blog_front/presentation/util/contants/contants_util.dart';
+import 'package:get_it/get_it.dart';
+import 'package:pls_blog_front/presentation/home/controller/homepage_controller.dart';
 import 'package:pls_blog_front/presentation/widgets/link_menu.dart';
 
 class HeaderPage extends StatelessWidget {
@@ -8,34 +9,36 @@ class HeaderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // var largura = MediaQuery.of(context).size.width;
-    // final _homeController = GetIt.instance.get<HomepageController>();
+    final _homeController = GetIt.instance.get<HomepageController>();
 
-    return Container(
-      color: Colors.green,
-      height: 100,
-      width: ConstantsUtil.screenPc,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(
-            'assets/images/pls-logo-tarja.png',
-            alignment: Alignment.centerLeft,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: _homeController.widthPageLimit(),
+          color: Colors.blue,
+          height: 150,
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/images/pls-logo-tarja.png',
+                alignment: Alignment.centerLeft,
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    LinkMenu(
+                      onTap: () {},
+                      text: 'text',
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
-          Container(
-            color: Colors.amber,
-            width: ConstantsUtil.screenTablet * 0.6,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                LinkMenu(
-                  onTap: () {},
-                  text: 'text',
-                )
-              ],
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

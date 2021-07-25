@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pls_blog_front/presentation/componentes/footer.dart';
 import 'package:pls_blog_front/presentation/componentes/header_page.dart';
+import 'package:pls_blog_front/presentation/componentes/posts.dart';
 import 'package:pls_blog_front/presentation/home/controller/homepage_controller.dart';
 import 'package:pls_blog_front/presentation/util/contants/contants_util.dart';
 import 'package:pls_blog_front/presentation/widgets/carousel/carousel_home.dart';
@@ -26,8 +28,6 @@ class _HomePageScreenState extends State<HomePageScreen> {
         _homeController.changeWidthPage(contraints.maxWidth);
         if (_homeController.widthPage < ConstantsUtil.screenSmartphone) {
           return _smartphones();
-        } else if (_homeController.widthPage < ConstantsUtil.screenTablet) {
-          return _tablets();
         } else {
           return _desktop(); //maior que 960px até 1280
         }
@@ -43,22 +43,22 @@ _smartphones() {
   );
 }
 
-_tablets() {
-  return Container(
-    color: Colors.red[200],
-    child: Text("Celulares & Tablets"),
+_desktop() {
+  return SingleChildScrollView(
+    //ou usar um listview
+    child: Column(
+      children: [
+        HeaderPage(),
+        _aquiCarousel(),
+        Posts(),
+        Footer(),
+      ],
+    ),
   );
 }
 
-_desktop() {
-  return Column(
-    children: [
-      HeaderPage(),
-      Expanded(
-        child: CarouselHome(),
-      ),
-      //Posts(),
-      // Footer(),
-    ],
+_aquiCarousel() {
+  return Container(
+    child: Image.asset('assets/images/1.jpg'),
   );
 }

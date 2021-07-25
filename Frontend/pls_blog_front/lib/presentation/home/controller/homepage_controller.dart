@@ -1,4 +1,5 @@
 import 'package:mobx/mobx.dart';
+import 'package:pls_blog_front/presentation/util/contants/contants_util.dart';
 
 part 'homepage_controller.g.dart';
 
@@ -11,5 +12,13 @@ abstract class _HomepageController with Store {
   @action
   changeWidthPage(value) {
     widthPage = value;
+  }
+
+  double widthPageLimit() {
+    if (widthPage < ConstantsUtil.screenPc) {
+      return widthPage;
+    } else {
+      return ConstantsUtil.screenPc;
+    }
   }
 }
