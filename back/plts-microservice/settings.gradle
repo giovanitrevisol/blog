@@ -1,0 +1,4 @@
+rootProject.name = 'plts-microservice'
+
+include 'plts-post'
+
