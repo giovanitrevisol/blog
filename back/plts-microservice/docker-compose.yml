@@ -24,8 +24,8 @@ services:
     ports:
       - "27017:27017"
     volumes:
-#      - /home/giovanitrevisol/MongoDB:/data/db #note
-      - /home/giovani/Developer/MongoDB:/data/db #pc
+#      - /home/giovanitrevisol/databases/MongoDB:/data/db #note
+      - /home/giovani/Developer/databases/MongoDB:/data/db #pc
     networks:
       - mongo-compose-network
 
