@@ -1,34 +1,22 @@
-version: '3'
+version: '3.8'
 
 services:
-  mongo-express:
-    image: mongo-express
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_BASICAUTH_USERNAME: giovanitrevisol
-      ME_CONFIG_BASICAUTH_PASSWORD: MongoDB2021!
-      ME_CONFIG_MONGODB_PORT: 27017
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: MongoDB2021!
-    links:
-      - mongo
-    networks:
-      - mongo-compose-network
-
   mongo:
     image: mongo
+    container_name: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: MongoDB2019!
     ports:
-      - "27017:27017"
+      - "0.0.0.0:27017:27017"
     volumes:
-#      - /home/giovanitrevisol/databases/MongoDB:/data/db #note
-      - /home/giovani/Developer/databases/MongoDB:/data/db #pc
+      - /home/giovanitrevisol/databases/MongoDB:/data/db #note
+      # - /home/giovani/Developer/databases/MongoDB:/data/db #pc
     networks:
       - mongo-compose-network
 
 networks:
   mongo-compose-network:
+    name: mongo-compose-network
     driver: bridge
+    
