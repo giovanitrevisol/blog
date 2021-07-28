@@ -1,2 +1,7 @@
 server:
   port: 8082
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:MongoDB2019!@localhost:27017/plts_mongo
